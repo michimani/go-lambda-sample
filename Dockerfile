@@ -11,4 +11,6 @@ RUN go build -o /main
 # copy artifacts to a clean image
 FROM public.ecr.aws/lambda/provided:al2
 COPY --from=build /main /main
-ENTRYPOINT [ "/main" ]
+COPY entry.sh /
+RUN chmod 755 /entry.sh
+ENTRYPOINT [ "/entry.sh" ]

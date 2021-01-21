@@ -20,21 +20,11 @@ This is a sample that implements the AWS Lambda function in Go language and depl
 
 ## Run at local
 
-1. Download RIE and install it on your local machine
-
-    ```bash
-    $ mkdir -p ~/.aws-lambda-rie \
-    && curl -Lo ~/.aws-lambda-rie/aws-lambda-rie \
-    https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie \
-    && chmod +x ~/.aws-lambda-rie/aws-lambda-rie
-    ```
-2. Run the image
+1. Run the image
 
     ```bash
     $ docker run \
     --rm \
-    --entrypoint /aws-lambda/aws-lambda-rie \
-    -v ~/.aws-lambda-rie:/aws-lambda \
     -p 9000:8080 \
     -e AWS_DEFAULT_REGION="ap-northeast-1" \
     -e AWS_ACCESS_KEY_ID="<your-aws-access-key-id>" \
